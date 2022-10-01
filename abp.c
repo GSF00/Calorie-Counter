@@ -35,12 +35,10 @@ NODO_ABP* Consulta_ABP(NODO_ABP *a, char *chave)
         comp_ABP++;
         if (!strcmp(a->info.chave, chave))
         {
-            comp_ABP++;
             return a;
         }
         else
         {
-            comp_ABP++;
             if (strcmp(a->info.chave, chave) > 0)
                 a = a->esq;
             else
@@ -48,4 +46,26 @@ NODO_ABP* Consulta_ABP(NODO_ABP *a, char *chave)
         }
     }
     return NULL;
+}
+
+int Altura_ABP(NODO_ABP *raiz)
+{
+    if(!raiz)
+        return 0;
+
+    if(!(raiz->esq) && !(raiz->dir))
+        return 1;
+
+    if(Altura_ABP(raiz->esq) >= Altura_ABP(raiz->dir))
+        return Altura_ABP(raiz->esq) + 1;
+
+    return Altura_ABP(raiz->dir) + 1;
+}
+
+int Numero_nodos_ABP(NODO_ABP *raiz)
+{
+    if(!raiz)
+        return 0;
+
+    return 1 + Numero_nodos_ABP(raiz->esq) + Numero_nodos_ABP(raiz->dir);
 }
