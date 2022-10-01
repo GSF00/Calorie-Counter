@@ -20,13 +20,19 @@ struct nodo_abp
 typedef struct nodo_abp NODO_ABP;
 
 
-// OperaÁıes
+// Opera√ß√µes
 
-// FunÁ„o que inicializa uma ABP
+// Fun√ß√£o que inicializa uma ABP
 NODO_ABP* Inicializa_ABP(void);
 
-// FunÁ„o que adiciona um elemento em ordem lexicogr·fica em uma ABP
+// Fun√ß√£o que adiciona um elemento em ordem lexicogr√°fica em uma ABP
 NODO_ABP* Insere_ABP(NODO_ABP *raiz, char *nome, int calorias);
 
-// FunÁ„o que consulta as calorias de um elemento em uma ABP
+// Fun√ß√£o que consulta as calorias de um elemento em uma ABP
 NODO_ABP* Consulta_ABP(NODO_ABP *a, char *chave);
+
+// Fun√ß√£o que calcula a altura de uma ABP
+int Altura_ABP(NODO_ABP *raiz);
+
+// Fun√ß√£o que calcula o n√∫mero de nodos em uma ABP
+int Numero_nodos_ABP(NODO_ABP *raiz);
