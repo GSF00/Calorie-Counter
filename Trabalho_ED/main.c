@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     // Teste se a chamada da main foi correta
     if(argc != 4)
     {
-        printf("Numero incorreto de parametros.\nPara chamar o programa digite: Trabalho_ED <arq_tabela_calorias> <arq_consumo_diario> <arq_saida>");
+        printf("Numero incorreto de parametros.\nPara chamar o programa digite: Trabalho_ED.exe <arq_tabela_calorias> <arq_consumo_diario> <arq_saida>");
         return 1;
     }
 
