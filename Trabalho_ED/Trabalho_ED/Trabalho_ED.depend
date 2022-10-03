@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1664765427 source:d:\coding\estruturas_de_dados\trabalho_ed\abp.c
+	<string.h>
+	<stdlib.h>
+	"abp.h"
+
+1664805885 d:\coding\estruturas_de_dados\trabalho_ed\abp.h
+
+1664765782 source:d:\coding\estruturas_de_dados\trabalho_ed\avl.c
+	<string.h>
+	<stdlib.h>
+	"avl.h"
+
+1664799958 d:\coding\estruturas_de_dados\trabalho_ed\avl.h
+
+1664764953 source:d:\coding\estruturas_de_dados\trabalho_ed\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abp.h"
+	"avl.h"
+

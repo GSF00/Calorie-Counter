@@ -1,0 +1,45 @@
+Calorias calculadas para consumo2.csv usando a tabela tabela2.csv.
+
+100g de a (10 calorias por 100g) = 10 calorias
+
+100g de b (20 calorias por 100g) = 20 calorias
+
+100g de c (30 calorias por 100g) = 30 calorias
+
+100g de d (40 calorias por 100g) = 40 calorias
+
+100g de e (50 calorias por 100g) = 50 calorias
+
+100g de f (60 calorias por 100g) = 60 calorias
+
+100g de g (70 calorias por 100g) = 70 calorias
+
+100g de h (80 calorias por 100g) = 80 calorias
+
+100g de i (90 calorias por 100g) = 90 calorias
+
+100g de j (100 calorias por 100g) = 100 calorias
+
+100g de k (110 calorias por 100g) = 110 calorias
+
+100g de l (120 calorias por 100g) = 120 calorias
+
+100g de m (130 calorias por 100g) = 130 calorias
+
+Total de 910 calorias consumidas no dia.
+
+======== ESTATÍSTICAS ABP ============
+
+Numero de nodos: 26
+Altura: 10
+Rotacoes: 0
+Comparacoes: 76
+
+
+======== ESTATÍSTICAS AVL ============
+
+Numero de nodos: 26
+Altura: 5
+Rotacoes: 16
+Comparacoes: 54
+
