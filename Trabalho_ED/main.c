@@ -14,10 +14,10 @@ int main(int argc, char *argv[])
 {
     FILE *arq_tabela, *arq_consumo, *arq_saida; // arquivos usados no programa
     NODO_ABP *ABP; // estrutura de dados ABP
-    NODO_ABP *Consultado_ABP; // variavel tempor·ria para a consulta em uma ABP
+    NODO_ABP *Consultado_ABP; // variavel tempor√°ria para a consulta em uma ABP
     NODO_ABP_AVL *AVL; // estrutura de dados AVL
-    NODO_ABP_AVL *Consultado_AVL; // variavel tempor·ria para a consulta em uma AVL
-    INFO_AVL temp_info; // variavel tempor·ria para a inserÁ„o em uma AVL
+    NODO_ABP_AVL *Consultado_AVL; // variavel tempor√°ria para a consulta em uma AVL
+    INFO_AVL temp_info; // variavel tempor√°ria para a inser√ß√£o em uma AVL
     char linha[MAX_ENTRY + 1];
     char *nome;
     char *calorias_str, *quantidade_str;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     // Teste se a chamada da main foi correta
     if(argc != 4)
     {
-        printf("Numero incorreto de parametros.\nPara chamar o programa digite: main <arq_tabela_calorias> <arq_consumo_diario> <arq_saida>");
+        printf("Numero incorreto de parametros.\nPara chamar o programa digite: Trabalho_ED <arq_tabela_calorias> <arq_consumo_diario> <arq_saida>");
         return 1;
     }
 
@@ -46,14 +46,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Abertura do arquivo com o consumo di·rio
+    // Abertura do arquivo com o consumo di√°rio
     if(!(arq_consumo = fopen(argv[2], "r")))
     {
         printf("Erro ao abrir o consumo diario\n");
         return 1;
     }
 
-    // Abertura do arquivo de saÌda
+    // Abertura do arquivo de sa√≠da
     if(!(arq_saida = fopen(argv[3], "w")))
     {
         printf("Erro ao abrir o arquivo de saida\n");
@@ -63,14 +63,14 @@ int main(int argc, char *argv[])
     ABP = Inicializa_ABP(); // Inicializa ABP
     AVL = Inicializa_AVL(); // Inicializa AVL
 
-    // Escreve no arquivo de saÌda
+    // Escreve no arquivo de sa√≠da
     fputs("Calorias calculadas para ", arq_saida);
     fputs(argv[2], arq_saida);
     fputs(" usando a tabela ", arq_saida);
     fputs(argv[1], arq_saida);
     fputs(".\n\n", arq_saida);
 
-    // Leitura da tabela e inserÁıes na ABP e na AVL
+    // Leitura da tabela e inser√ß√µes na ABP e na AVL
     while(fgets(linha, MAX_ENTRY + 1, arq_tabela))
     {
         nome = strtok_r(linha, ",", &calorias_str);
@@ -90,10 +90,10 @@ int main(int argc, char *argv[])
     altura_ABP = Altura_ABP(ABP); // Calcula altura da ABP
     altura_AVL = Altura_AVL(AVL); // Calcula a altura da AVL
 
-    numero_nodos_ABP = Numero_nodos_ABP(ABP); // Calcula o n˙mero de nodos da ABP
-    numero_nodos_AVL = Numero_nodos_AVL(AVL); // Calcula o n˙mero de nodos da AVL
+    numero_nodos_ABP = Numero_nodos_ABP(ABP); // Calcula o n√∫mero de nodos da ABP
+    numero_nodos_AVL = Numero_nodos_AVL(AVL); // Calcula o n√∫mero de nodos da AVL
 
-    // Consulta ao arquivo com o consumo di·rio e c·lculo das calorias ingeridas
+    // Consulta ao arquivo com o consumo di√°rio e c√°lculo das calorias ingeridas
     while(fgets(linha, MAX_ENTRY + 1, arq_consumo))
     {
         nome = strtok_r(linha, ",", &quantidade_str);
@@ -112,23 +112,23 @@ int main(int argc, char *argv[])
         len = strlen(quantidade_str);
         quantidade_str[len-1] = 0;
 
-        // Escreve no arquivo de saÌda
+        // Escreve no arquivo de sa√≠da
         sprintf(buffer, "%sg de %s (%d calorias por 100g) = %d calorias\n\n", quantidade_str, nome, Consultado_ABP->info.calorias, (Consultado_ABP->info.calorias * quantidade / 100));
         fputs(buffer, arq_saida);
     }
 
-    // Fechamento do arquivo com o consumo di·rio
+    // Fechamento do arquivo com o consumo di√°rio
     fclose(arq_consumo);
 
-    // Escreve no arquivo de saÌda
-    sprintf(buffer, "Total de %d calorias consumidas no dia.\n\n======== ESTATÕSTICAS ABP ============\n\n", soma_calorias_ABP);
+    // Escreve no arquivo de sa√≠da
+    sprintf(buffer, "Total de %d calorias consumidas no dia.\n\n======== ESTAT√çSTICAS ABP ============\n\n", soma_calorias_ABP);
     fputs(buffer, arq_saida);
     sprintf(buffer, "Numero de nodos: %d\nAltura: %d\nRotacoes: 0\nComparacoes: %d\n\n", numero_nodos_ABP, altura_ABP, comp_ABP);
     fputs(buffer, arq_saida);
-    sprintf(buffer, "\n======== ESTATÕSTICAS AVL ============\n\nNumero de nodos: %d\nAltura: %d\nRotacoes: %d\nComparacoes: %d\n\n", numero_nodos_AVL, altura_AVL, rotacao_AVL, comp_AVL);
+    sprintf(buffer, "\n======== ESTAT√çSTICAS AVL ============\n\nNumero de nodos: %d\nAltura: %d\nRotacoes: %d\nComparacoes: %d\n\n", numero_nodos_AVL, altura_AVL, rotacao_AVL, comp_AVL);
     fputs(buffer, arq_saida);
 
-    // Fechamento do arquivo de saÌda
+    // Fechamento do arquivo de sa√≠da
     fclose(arq_saida);
 
     return 0;
