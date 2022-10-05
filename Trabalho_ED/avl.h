@@ -19,7 +19,7 @@ struct nodo_abp_avl
 typedef struct nodo_abp_avl NODO_ABP_AVL;
 
 
-// Operações
+// Operações (obtidas no Moodle)
 
 // Função que inicializa uma AVL
 NODO_ABP_AVL* Inicializa_AVL(void);

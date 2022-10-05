@@ -1,9 +1,11 @@
 #include <string.h>
 #include <stdlib.h>
+
 #include "avl.h"
 
 int comp_AVL;
 int rotacao_AVL;
+
 
 NODO_ABP_AVL* Inicializa_AVL(void)
 {
@@ -169,21 +171,24 @@ NODO_ABP_AVL* Consulta_AVL(NODO_ABP_AVL *a, char *chave)
                 a = a->dir;
         }
     }
+
     return NULL;
 }
 
 int Altura_AVL(NODO_ABP_AVL *raiz)
 {
+    int esq, dir;
+
     if(!raiz)
         return 0;
 
-    //if(!(raiz->esq) && !(raiz->dir))
-        //return 1;
+    esq = Altura_AVL(raiz->esq);
+    dir = Altura_AVL(raiz->dir);
 
-    if(Altura_AVL(raiz->esq) >= Altura_AVL(raiz->dir))
-        return Altura_AVL(raiz->esq) + 1;
+    if(esq >= dir)
+        return esq + 1;
 
-    return Altura_AVL(raiz->dir) + 1;
+    return dir + 1;
 }
 
 int Numero_nodos_AVL(NODO_ABP_AVL *raiz)

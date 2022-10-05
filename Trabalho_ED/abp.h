@@ -20,7 +20,7 @@ struct nodo_abp
 typedef struct nodo_abp NODO_ABP;
 
 
-// Operações
+// Operações (obtidas no Moodle)
 
 // Função que inicializa uma ABP
 NODO_ABP* Inicializa_ABP(void);

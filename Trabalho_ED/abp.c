@@ -4,6 +4,7 @@
 
 int comp_ABP;
 
+
 NODO_ABP* Inicializa_ABP(void)
 {
     return NULL;
@@ -45,21 +46,30 @@ NODO_ABP* Consulta_ABP(NODO_ABP *a, char *chave)
                 a = a->dir;
         }
     }
+
     return NULL;
 }
 
 int Altura_ABP(NODO_ABP *raiz)
 {
+    int esq, dir;
+
     if(!raiz)
         return 0;
 
-    if(!(raiz->esq) && !(raiz->dir))
-        return 1;
+    esq = Altura_ABP(raiz->esq);
+    dir = Altura_ABP(raiz->dir);
 
+    if(esq >= dir)
+        return esq + 1;
+
+    return dir + 1;
+/*
     if(Altura_ABP(raiz->esq) >= Altura_ABP(raiz->dir))
         return Altura_ABP(raiz->esq) + 1;
 
     return Altura_ABP(raiz->dir) + 1;
+*/
 }
 
 int Numero_nodos_ABP(NODO_ABP *raiz)
