@@ -18,19 +18,19 @@ int main(int argc, char *argv[])
     NODO_ABP_AVL *AVL; // estrutura de dados AVL
     NODO_ABP_AVL *Consultado_AVL; // variavel temporária para a consulta em uma AVL
     INFO_AVL temp_info; // variavel temporária para a inserção em uma AVL
-    char linha[MAX_ENTRY + 1];
-    char *nome;
-    char *calorias_str, *quantidade_str;
-    int calorias = 0, quantidade = 0;
-    int soma_calorias_ABP = 0;
-    int soma_calorias_AVL = 0;
-    int altura_ABP = 0;
-    int altura_AVL = 0;
-    int numero_nodos_ABP = 0;
-    int numero_nodos_AVL = 0;
-    int ok;
-    int len;
-    char buffer[MAX_BUFFER];
+    char linha[MAX_ENTRY + 1]; // variável para a inserção e consulta
+    char *nome; // variável para a inserção e consulta
+    char *calorias_str, *quantidade_str; // variável para a inserção e consulta
+    int calorias = 0, quantidade = 0; // variável para a inserção e consulta
+    int soma_calorias_ABP = 0; // variável para o calculo das calorias usando a ABP
+    int soma_calorias_AVL = 0; // variável para o calculo das calorias usando a AVL
+    int altura_ABP = 0; // variável para o calculo da altura da ABP
+    int altura_AVL = 0; // variável para o calculo da altura da AVL
+    int numero_nodos_ABP = 0; // variável para o calculo de nodos na ABP
+    int numero_nodos_AVL = 0; // variável para o calculo de nodos na AVL
+    int ok; // variável de controle
+    int len; // variável de controle
+    char buffer[MAX_BUFFER]; // buffer para escrita no arquivo de saída
 
     // Teste se a chamada da main foi correta
     if(argc != 4)

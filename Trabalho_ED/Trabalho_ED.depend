@@ -20,3 +20,17 @@
 	"abp.h"
 	"avl.h"
 
+1664929022 source:d:\calorie-counter-main\trabalho_ed\abp.c
+	<string.h>
+	<stdlib.h>
+	"abp.h"
+
+1664929022 d:\calorie-counter-main\trabalho_ed\abp.h
+
+1664929022 source:d:\calorie-counter-main\trabalho_ed\avl.c
+	<string.h>
+	<stdlib.h>
+	"avl.h"
+
+1664929022 d:\calorie-counter-main\trabalho_ed\avl.h
+
